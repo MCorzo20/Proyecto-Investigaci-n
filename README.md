@@ -1,2 +1,2 @@
-# Proyecto-Investigaci-n
+# Proyecto-Investigacion
 Repositorio del projecto de tesis
