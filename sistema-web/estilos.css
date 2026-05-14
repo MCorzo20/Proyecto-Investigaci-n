@@ -1,115 +1,159 @@
-/* Estilos generales de la página */
+/* Reset y estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
+    background-color: #fdfbff; /* Fondo muy claro con toque púrpura */
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
-/* Contenedor del formulario */
-.form-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-}
-
-h2 {
-    text-align: center;
+    padding-top: 50px;
     color: #333;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Cabecera */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.logo-placeholder img {
+    background-color: #eeeaf2;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.date-time {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.date { font-weight: 500; }
+.time { margin-top: 5px; }
+
+.logout-icon {
+    cursor: pointer;
+    color: #333;
+}
+
+/* Sección del Formulario */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-/* Estilos de los Fieldsets */
-fieldset {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 15px;
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-legend {
-    font-weight: bold;
-    color: #007bff;
-    padding: 0 10px;
-}
-
-/* Organización de los campos */
+/* Elementos del Formulario */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    color: #555;
-    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
 }
 
 input[type="text"],
 input[type="email"],
-select,
-textarea {
+input[type="number"],
+select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
     font-size: 14px;
+    color: #666;
+    background-color: #fff;
 }
 
-/* Efecto al hacer clic en los campos */
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
 }
 
-/* Estilos para Radio Buttons */
-.radio-group {
+/* Checkbox estilizado */
+.checkbox-group {
     display: flex;
-    gap: 15px;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.radio-group input {
-    margin-right: 5px;
+.checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+    accent-color: #333;
+}
+
+.checkbox-text label {
+    margin-bottom: 2px;
+    font-weight: 500;
+}
+
+.checkbox-text span {
+    font-size: 12px;
+    color: #999;
 }
 
 /* Botones */
-.button-group {
+.actions {
     display: flex;
     gap: 10px;
 }
 
-button {
+.btn {
     flex: 1;
     padding: 12px;
+    border-radius: 8px;
     border: none;
-    border-radius: 4px;
+    font-size: 14px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #2d2d2d;
     color: white;
 }
 
-button[type="submit"] {
-    background-color: #007bff;
+.btn-secondary {
+    background-color: #333;
+    color: white;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.btn-reset {
-    background-color: #6c757d;
-}
-
-.btn-reset:hover {
-    background-color: #5a6268;
+.btn:hover {
+    opacity: 0.9;
 }
